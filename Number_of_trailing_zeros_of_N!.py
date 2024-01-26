@@ -6,8 +6,8 @@ def scramble(number):
         total += number
     return total
 
+
 if __name__ == "__main__":
     print(scramble(0))
     print(scramble(6))
     print(scramble(30))
-

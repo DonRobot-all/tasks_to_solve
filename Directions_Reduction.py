@@ -17,18 +17,18 @@ the language):
 - ["NORTH", "WEST", "SOUTH", "EAST"]
 - ["NORTH", "WEST", "SOUTH", "EAST"]
 
-"""
+# """
 
 
 def dir_reduc(arr):
-    directions = ({
+    direction = ({
         "NORTH": "SOUTH",
         "SOUTH": "NORTH",
         "WEST": "EAST",
         "EAST": "WEST"
     })
     for i in range(len(arr) - 1):
-        if directions[arr[i]] == arr[i + 1]:
+        if direction[arr[i]] == arr[i + 1]:
             del arr[i]
             del arr[i]
             return dir_reduc(arr)
@@ -36,5 +36,7 @@ def dir_reduc(arr):
 
 
 if __name__ == '__main__':
-    print(dir_reduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]))
+    print(dir_reduc(
+        ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]
+        ))
     print(dir_reduc(["NORTH", "WEST", "SOUTH", "EAST"]))
