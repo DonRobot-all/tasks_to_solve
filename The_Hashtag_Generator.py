@@ -22,11 +22,29 @@ Examples
 """
 
 
+# def generate_hashtag(s):
+#     result = '#'
+#     for i in s.split():
+#         result += i.capitalize()
+#     return False if len(s) == 0 or len(result) > 140 else result
+
+
 def generate_hashtag(s):
-    ...
+    result = '#'
+    first = 0
+    second = 0
+    for i in s:
+        second += 1
+        if not i.isalpha() or second == len(s):
+            result += s[first:second].capitalize().replace(' ', '')
+            first = second
+    return False if len(s) == 0 or len(result) > 140 else result
 
 
 if __name__ == "__main__":
     print(generate_hashtag('Codewars'))
+    print(generate_hashtag('Codewars      '))
     print(generate_hashtag('Codewars Is Nice'))
-    print(generate_hashtag('CoDeWaRs is niCe'))
+    print(generate_hashtag('CoDeWaRs is niCe'))  #CodewarsIsNice
+    print(generate_hashtag('c i n'))
+    print(generate_hashtag(''))
