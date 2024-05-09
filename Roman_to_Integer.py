@@ -38,17 +38,17 @@ class Solution(object):
         # return result
 
 
-        # roman_to_int: dict[int] = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-        # result: int = 0
-        # prev_value: int = 0
-        # for char in s:
-        #     value: int = roman_to_int[char]
-        #     if value > prev_value:
-        #         result += value - 2 * prev_value
-        #     else:
-        #         result += value
-        #     prev_value = value
-        # return result
+        roman_to_int: dict[int] = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+        result: int = 0
+        prev_value: int = 0
+        for char in s:
+            value: int = roman_to_int[char]
+            if value > prev_value:
+                result += value - 2 * prev_value
+            else:
+                result += value
+            prev_value = value
+        return result
 
 a = Solution()
 print(a.romanToInt('LVIII'))
