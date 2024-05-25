@@ -32,11 +32,8 @@ class Solution(object):
             for a in range(row, len(s), step):
                 result += s[a]
                 if row > 0 and row < numRows - 1 and a + step - 2 * row < len(s):
-                    result += s[a + step - 2 * row]
-                
+                    result += s[a + step - 2 * row]       
         return result
-
-
 
 a = Solution()
 print(a.convert("PAYPALISHIRING", 3))  # PAHNAPLSIIGYIR
