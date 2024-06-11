@@ -19,16 +19,13 @@ class Solution(object):
         :rtype: int
         """
         result = 0
-        temp = []
         flag = True
-        for char in s:
-            if char not in temp:
-                count = s.count(char)
-                if count % 2 != 0 and flag:
-                    result += 1
-                    flag = False
-                result += count if count % 2 == 0 else count - 1 # (count // 2) * 2
-                temp.append(char)
+        for char in set(s):
+            count = s.count(char)
+            if count % 2 != 0 and flag:
+                result += 1
+                flag = False
+            result += count if count % 2 == 0 else count - 1 # (count // 2) * 2
         return result
 
 if __name__ == "__main__":
