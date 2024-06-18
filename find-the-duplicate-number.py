@@ -31,13 +31,7 @@ class Solution(object):
             tortoise = nums[tortoise]
             hare = nums[nums[hare]]
             if tortoise == hare:
-                break
-    
-        tortoise = nums[0]
-        while tortoise != hare:
-            tortoise = nums[tortoise]
-            hare = nums[hare]
-        
+                break    
         return tortoise
 
 a = Solution()
